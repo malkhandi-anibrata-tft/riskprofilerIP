@@ -1,0 +1,38 @@
+// package main
+
+// import (
+// 	"encoding/json"
+// 	"fmt"
+// 	"net/http"
+// )
+
+// type ASNInfo struct {
+// 	ASN uint `json:"asn"`
+// }
+
+// func main() {
+// 	ips := []string{"123.123.123.123", "456.456.456.456", "789.789.789.789"}
+
+// 	asnMap := make(map[string]uint)
+// 	for _, ip := range ips {
+// 		url := fmt.Sprintf("https://ipinfo.io/%s?token=YOUR_TOKEN_HERE", ip)
+
+// 		resp, err := http.Get(url)
+// 		if err != nil {
+// 			fmt.Println(err)
+// 			return
+// 		}
+// 		defer resp.Body.Close()
+
+// 		var data ASNInfo
+// 		err = json.NewDecoder(resp.Body).Decode(&data)
+// 		if err != nil {
+// 			fmt.Println(err)
+// 			return
+// 		}
+
+// 		asnMap[ip] = data.ASN
+// 	}
+
+// 	fmt.Println(asnMap)
+// }
